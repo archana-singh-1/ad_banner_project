@@ -25,7 +25,6 @@ const BannerImageComp: React.FC<BannerProps> = ({ id, title, description, cta, i
       <div className={styles.bannerImage}>
         <img src={image} alt={title} />
       </div>
-
       <div className={styles.data}>
         <h2 className={styles.bannerTitle}>{title}</h2>
         <p className={styles.bannerDescription}>{description}</p>

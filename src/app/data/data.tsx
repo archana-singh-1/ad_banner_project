@@ -13,7 +13,7 @@ export const bannerData = [
     description: "Check out the latest additions to our collection. Fresh styles just for you.",
     cta: "Explore Now",
     image: "/download.jpeg",
-    background: "/square.png"
+    background: "/background_2.jpg"
   },
   {
     id: 3,
@@ -21,7 +21,8 @@ export const bannerData = [
     description: "Stay warm with our new winter collection. Stylish and cozy for the season.",
     cta: "Browse Collection",
     image: "/download.jpeg",
-    background: "/square.png"
+    background: "/background_2.jpg"
+    
   },
   {
     id: 4,
@@ -29,7 +30,8 @@ export const bannerData = [
     description: "Refresh your wardrobe with the latest spring trends and vibrant colors.",
     cta: "Discover More",
     image: "/download.jpeg",
-    background: "/square.png"
+    background:"/square.png"
+    
   },
   {
     id: 5,
@@ -37,7 +39,7 @@ export const bannerData = [
     description: "Get access to exclusive deals and discounts available only to our members.",
     cta: "Join Now",
     image: "/download.jpeg",
-    background: "/square.png"
+    background: "/background_2.jpg"
   },
   {
     id: 6,
@@ -45,7 +47,7 @@ export const bannerData = [
     description: "Celebrate the holidays with special offers and festive discounts.",
     cta: "Shop Specials",
     image: "/download.jpeg",
-    background: "/square.png"
+    background:  "/square.png"
   },
   {
     id: 7,
