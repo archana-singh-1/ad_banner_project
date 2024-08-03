@@ -4,6 +4,7 @@ import BannerImageComp from './components/ BannerImageComp';
 import EditBannerTemplateBs from './components/EditBannerTemplateBs';
 import { bannerData } from './data/data';
 import styles from './styles/BannerImageComp.module.css';
+import Modal from './Model';
 
 const Home: React.FC = () => {
   const [banners, setBanners] = useState(bannerData);
@@ -33,11 +34,13 @@ const Home: React.FC = () => {
         />
       ))}
       {editingBanner && (
-        <EditBannerTemplateBs
-          banner={editingBanner}
-          onSave={handleSave}
-          onClose={handleClose}
-        />
+        <Modal onClose={handleClose}>
+          <EditBannerTemplateBs
+            banner={editingBanner}
+            onSave={handleSave}
+            onClose={handleClose}
+          />
+        </Modal>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/BannerImageComp.module.css';
@@ -14,6 +14,10 @@ type BannerProps = {
 };
 
 const BannerImageComp: React.FC<BannerProps> = ({ id, title, description, cta, image, background, onEdit }) => {
+  const handleEditClick = () => {
+    onEdit(id);
+  };
+
   const bannerStyle = {
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
@@ -33,7 +37,7 @@ const BannerImageComp: React.FC<BannerProps> = ({ id, title, description, cta, i
 
       <button
         type="button"
-        onClick={() => onEdit(id)}
+        onClick={handleEditClick}
         className={styles.bannerButtonEdit}
         aria-label="Edit banner"
         title="Edit banner"

@@ -1,5 +1,7 @@
-"use client";
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudUploadAlt, faDownload } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles/BannerImageComp.module.css';
 
 type EditBannerProps = {
   banner: {
@@ -16,61 +18,86 @@ type EditBannerProps = {
 
 const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClose }) => {
   const [editedBanner, setEditedBanner] = useState(banner);
+  const [previewImage, setPreviewImage] = useState(banner.image);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setEditedBanner({ ...editedBanner, [name]: value });
   };
 
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (event: any) => {
+        setPreviewImage(event.target.result);
+        setEditedBanner({ ...editedBanner, image: event.target.result });
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
+
+  const handleSave = () => {
+    onSave(editedBanner);
+  };
+
   return (
-    <div className="bottom-sheet">
-      <label htmlFor="title">Title</label>
-      <input
-        id="title"
-        name="title"
-        value={editedBanner.title}
-        onChange={handleChange}
-        placeholder="Enter the title"
-      />
+    <div className={styles.editFormContainer}>
+      <div className={styles.editFormInfo}>
+        <p className={styles.editbnner}>Edit Banner</p>
+        <div className={styles.bannerInfo}>
+          <img src={previewImage} alt="Banner" className={styles.bannerPreview} />
+          <div className={styles.bannerText}>
+            <h3>{editedBanner.title}</h3>
+            <p>{editedBanner.description}</p>
+            <button type="button" className={styles.bannerButton}>{editedBanner.cta}</button>
+          </div>
+        </div>
+      </div>
 
-      <label htmlFor="description">Description</label>
-      <textarea
-        id="description"
-        name="description"
-        value={editedBanner.description}
-        onChange={handleChange}
-        placeholder="Enter the description"
-      ></textarea>
+      <div className={styles.editFormImages}>
+        <label htmlFor="imageUpload" className={styles.imageUploadLabel}>
+          <FontAwesomeIcon icon={faCloudUploadAlt} />
+          <input
+            id="imageUpload"
+            name="image"
+            type="file"
+            className={styles.hidden}
+            onChange={handleImageUpload}
+            title="Upload image"
+          />
+        </label>
+        {[...Array(4)].map((_, index) => (
+          <div key={index} className={styles.imageCircle}>
+            <img src={banner.image} alt="Banner" />
+          </div>
+        ))}
+      </div>
 
-      <label htmlFor="cta">Call to Action</label>
-      <input
-        id="cta"
-        name="cta"
-        value={editedBanner.cta}
-        onChange={handleChange}
-        placeholder="Enter the call to action text"
-      />
+      <div className={styles.editForm}>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          name="title"
+          value={editedBanner.title}
+          onChange={handleChange}
+          placeholder="Enter the title"
+        />
 
-      <label htmlFor="image">Image URL</label>
-      <input
-        id="image"
-        name="image"
-        value={editedBanner.image}
-        onChange={handleChange}
-        placeholder="Enter the image URL"
-      />
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          value={editedBanner.description}
+          onChange={handleChange}
+          placeholder="Enter the description"
+        ></textarea>
 
-      <label htmlFor="background">Background Image URL</label>
-      <input
-        id="background"
-        name="background"
-        value={editedBanner.background}
-        onChange={handleChange}
-        placeholder="Enter the background image URL"
-      />
-
-      <button type="button" onClick={() => onSave(editedBanner)}>Save</button>
-      <button type="button" onClick={onClose}>Close</button>
+        <button type="button" onClick={handleSave}>Done</button>
+        <button type="button" onClick={onClose}>Close</button>
+        <button type="button" className={styles.downloadButton}>
+          <FontAwesomeIcon icon={faDownload} /> Download
+        </button>
+      </div>
     </div>
   );
 };
