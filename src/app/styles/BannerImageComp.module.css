@@ -26,6 +26,7 @@
   bottom: 3px;
   width: 200px;
   height: 171px;
+
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -33,8 +34,9 @@
 }
 
 .bannerImage img {
-  width: 104%;
-  height: 102%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
 }
 

@@ -66,9 +66,10 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
             title="Upload image"
           />
         </label>
-        {[...Array(4)].map((_, index) => (
+        {[...Array(6)].map((_, index) => (
           <div key={index} className={styles.imageCircle}>
-            <img src={banner.image} alt="Banner" />
+            <img src={banner.image[0]} alt="Banner" />
+            <img src={banner.image[1]} alt="Banner" />
           </div>
         ))}
       </div>
@@ -93,7 +94,6 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
         ></textarea>
 
         <button type="button" onClick={handleSave}>Done</button>
-        <button type="button" onClick={onClose}>Close</button>
         <button type="button" className={styles.downloadButton}>
           <FontAwesomeIcon icon={faDownload} /> Download
         </button>
