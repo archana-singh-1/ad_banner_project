@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-left: 164px;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 157px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.bannerImage {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  border: solid 2px black;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.bannerTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.bannerDescription {
+  font-size: 16px;
+}
+
+.bannerButton {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+}
+
+.bannerButtonEdit {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff4081;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerButtonEdit i {
+  margin-right: 4px; /* Add margin for spacing between icon and text */
+}
+
+.data {
+  width: 30px;
+  border: solid 2px red;
+  width: 238px;
+  text-align: center;
+}
