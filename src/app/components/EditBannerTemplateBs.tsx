@@ -45,12 +45,12 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
       <div className={styles.editFormInfo}>
         <p className={styles.editbnner}>Edit Banner</p>
         <div className={styles.bannerInfo}>
-          <img src={previewImage} alt="Banner" className={styles.bannerPreview} />
           <div className={styles.bannerText}>
             <h3>{editedBanner.title}</h3>
             <p>{editedBanner.description}</p>
             <button type="button" className={styles.bannerButton}>{editedBanner.cta}</button>
           </div>
+          <img src={previewImage} alt="Banner" className={styles.bannerPreview} />
         </div>
       </div>
 
@@ -66,10 +66,10 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
             title="Upload image"
           />
         </label>
-        {[...Array(6)].map((_, index) => (
+        {[...Array(5)].map((_, index) => (
           <div key={index} className={styles.imageCircle}>
-            <img src={banner.image[0]} alt="Banner" />
-            <img src={banner.image[1]} alt="Banner" />
+            <img src={banner.image} alt="Banner" />
+            <img src={banner.image} alt="Banner" />
           </div>
         ))}
       </div>

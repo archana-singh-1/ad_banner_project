@@ -12,7 +12,7 @@ export const bannerData = [
     title: "New Arrivals",
     description: "Check out the latest additions to our collection. Fresh styles just for you.",
     cta: "Explore Now",
-    image: "/image_2.avif",
+    image: ["/image_2.webp"],
     background: "/background_2.jpg"
   },
   {

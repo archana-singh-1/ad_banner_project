@@ -11,7 +11,6 @@
   align-items: center;
   justify-content: center;
   padding-top: 210px;
-  /* padding-bottom: 77px; */
   padding-right: 367px;
   padding-left: 154px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -26,7 +25,6 @@
   bottom: 3px;
   width: 200px;
   height: 171px;
-
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -118,24 +116,18 @@
   cursor: pointer;
 }
 
-
 .editFormContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.editFormInfo {
-  text-align: center;
-}
-
 .bannerInfo {
   width: 67%;
-  height: 197px;
   display: flex;
   margin: auto;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 8px;
@@ -144,14 +136,8 @@
 .bannerPreview {
   width: 100px;
   height: 100px;
-  border-radius: 8px;
+  border-radius: 51px;
   object-fit: cover;
-}
-
-.bannerText {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .editFormImages {
@@ -161,14 +147,12 @@
 }
 
 .imageCircle {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 66px;
   border-radius: 50%;
   overflow: hidden;
-  display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ccc;
 }
 
 .imageCircle img {
@@ -180,14 +164,13 @@
 .imageUploadLabel {
   cursor: pointer;
   font-size: 24px;
-  color: #0070f3;
+  color: silver;
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 99px;
   border-radius: 50%;
-  border: 1px solid #0070f3;
 }
 
 .editForm {
@@ -196,15 +179,16 @@
   gap: 10px;
 }
 
-.editForm label {
+/* .editForm label {
   font-weight: bold;
-}
+} */
 
 .editForm input,
 .editForm textarea {
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font-family: 'normal';
 }
 
 .editForm button {
@@ -237,4 +221,13 @@
 
 .hidden {
   display: none;
+}
+
+/* .icon{
+  color: red;
+} */
+
+.bannerText{
+  font-style: normal;
+  font-size:small;
 }
