@@ -1,17 +1,18 @@
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
   gap: 27px;
-  margin-left: 200px;
+
 }
+
 
 .banner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 210px;
-  padding-right: 367px;
+  padding-top: 317px;
+  padding-right: 533px;
   padding-left: 154px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-size: cover;
@@ -32,7 +33,7 @@
 }
 
 .bannerImage img {
-  width: 100%;
+  width: 83%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
@@ -44,7 +45,7 @@
 }
 
 .bannerDescription {
-  font-size: 16px;
+  font-size: 20px;
   width: 255px;
 }
 
@@ -79,7 +80,7 @@
 
 .data {
   position: absolute; 
-  top: -20px; 
+  top: 42px; 
   padding: 8px;
   border-radius: 4px;
 }
