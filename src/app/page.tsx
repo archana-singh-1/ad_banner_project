@@ -46,8 +46,8 @@ const Home: React.FC = () => {
           />
         </Modal>
       )}
-      <Footer/>
     </div>
+    <Footer/>
     </>
   );
 };
