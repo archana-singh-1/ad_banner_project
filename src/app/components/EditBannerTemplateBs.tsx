@@ -16,7 +16,7 @@ type EditBannerProps = {
   onClose: () => void;
 };
 
-const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClose }) => {
+const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave }) => {
   const [editedBanner, setEditedBanner] = useState(banner);
   const [previewImage, setPreviewImage] = useState(banner.image);
 
@@ -38,6 +38,17 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
 
   const handleSave = () => {
     onSave(editedBanner);
+  };
+
+  const handleDownload = () => {
+    const dataStr = JSON.stringify(editedBanner, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'banner.json';
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -69,7 +80,6 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
         {[...Array(5)].map((_, index) => (
           <div key={index} className={styles.imageCircle}>
             <img src={banner.image} alt="Banner" />
-            <img src={banner.image} alt="Banner" />
           </div>
         ))}
       </div>
@@ -94,7 +104,7 @@ const EditBannerTemplateBs: React.FC<EditBannerProps> = ({ banner, onSave, onClo
         ></textarea>
 
         <button type="button" onClick={handleSave}>Done</button>
-        <button type="button" className={styles.downloadButton}>
+        <button type="button" className={styles.downloadButton} onClick={handleDownload}>
           <FontAwesomeIcon icon={faDownload} /> Download
         </button>
       </div>
