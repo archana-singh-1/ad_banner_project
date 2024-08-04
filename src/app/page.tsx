@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import BannerImageComp from './components/ BannerImageComp';
 import EditBannerTemplateBs from './components/EditBannerTemplateBs';
 import { bannerData } from './data/data';
@@ -25,6 +27,8 @@ const Home: React.FC = () => {
   };
 
   return (
+    <>
+      <Header/>
     <div className={styles.container}>
       {banners.map((banner) => (
         <BannerImageComp
@@ -42,7 +46,9 @@ const Home: React.FC = () => {
           />
         </Modal>
       )}
+      <Footer/>
     </div>
+    </>
   );
 };
 
